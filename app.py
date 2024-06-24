@@ -1,8 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
-from numpy.core.numeric import ComplexWarning
+
 
 
 # Load the model
