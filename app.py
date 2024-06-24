@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 with open('scaler1.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with open('xgb_gb_model1.pkl', 'rb') as f:
+with open('xgb_gb_model2.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Streamlit app
