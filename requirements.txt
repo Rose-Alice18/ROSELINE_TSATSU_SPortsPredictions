@@ -1,4 +1,3 @@
 streamlit
 numpy
-pip install scikit-learn==1.2.2
-bz2file
+scikit-learn==1.2.2
