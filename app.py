@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-from sklearn.preprocessing import StandardScaler
+
 
 # Load the model
 with open('best_gb_model (1).pkl', 'rb') as file:
@@ -56,7 +56,6 @@ if st.sidebar.button('Predict'):
     ]], dtype=float)
 
  
-
     # Make prediction
     prediction = model.predict(features)
 
