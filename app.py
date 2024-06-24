@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import numpy as np
-import sklearn
+
 
 # Load the model
 with open('best_gb_model (1).pkl', 'rb') as file:
