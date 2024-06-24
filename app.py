@@ -5,10 +5,10 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler
 
 # Load the scaler and model from compressed files
-with open('scaler.pkl', 'rb') as f:
+with open('scaler1.pkl', 'rb') as f:
     scaler = pickle.load(f)
 
-with gzip.open('ensemble_model.pkl.gz', 'rb') as f:
+with open('xgb_gb_model1.pkl', 'rb') as f:
     model = pickle.load(f)
 
 # Streamlit app
@@ -24,7 +24,6 @@ def user_input_features():
     dribbling = st.sidebar.number_input("Dribbling", min_value=0, max_value=100, value=50)
     physic = st.sidebar.number_input("Physic", min_value=0, max_value=100, value=50)
     movement_sprint_speed = st.sidebar.number_input("Movement Sprint Speed", min_value=0, max_value=100, value=50)
-    mentality_composure = st.sidebar.number_input("Mentality Composure", min_value=0, max_value=100, value=50)
     skill_ball_control = st.sidebar.number_input("Skill Ball Control", min_value=0, max_value=100, value=50)
 
     data = {
@@ -35,7 +34,7 @@ def user_input_features():
         'dribbling': dribbling,
         'physic': physic,
         'movement_sprint_speed': movement_sprint_speed,
-        'mentality_composure': mentality_composure,
+       
         'skill_ball_control': skill_ball_control
     }
     return data
@@ -46,7 +45,7 @@ if st.sidebar.button('Predict'):
     # Convert data to the appropriate format and apply scaling
     features = np.array([[
         input_data['movement_reactions'], input_data['potential'], input_data['age'], input_data['power_stamina'], 
-        input_data['dribbling'], input_data['physic'], input_data['movement_sprint_speed'], input_data['mentality_composure'], 
+        input_data['dribbling'], input_data['physic'], input_data['movement_sprint_speed'], 
         input_data['skill_ball_control']
     ]], dtype=float)
 
